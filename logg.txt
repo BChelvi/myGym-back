@@ -1,1 +1,1 @@
-{"action":"getallexercicesarm"}
+{"mail":"benjamin@gmail.com","pwd":"benjamin","action":"login"}

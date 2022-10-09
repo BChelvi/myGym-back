@@ -26,19 +26,23 @@ switch($params["action"])
     ;
     break;
 
-    case "" :
+    case "getexercicearm" :
+        Getexercicearm :: run ($params["exercices_biceps_id"])
         ;
     break;
 
-    case "" :
+    case "login" :
+        Login :: run($params)
     ;
     break;
 
-    case "" :
+    case "signin" :
+        Signin :: run($params)
         ;
     break;
 
-    case "" :
+    case "logout" :
+        Logout :: run()
             ;
     break;    
 }
