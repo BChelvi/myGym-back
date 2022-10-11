@@ -61,8 +61,6 @@ try{
     $prep = $this -> dbco ->prepare($sql);
 
         $prep -> execute($keys_values);
-        echo $sql;
-echo 'info bien enregistré';
 }
 catch(PDOException $e){
     echo "Erreur : " . $e->getMessage();
@@ -125,7 +123,6 @@ public function selectOne($table,$field,$value){
     if (count($resultat) == 0)
     return;
     else
-    print_r ($resultat[0]);
     return $resultat[0];
 
 

@@ -1,5 +1,6 @@
 <?php
-header("Access-Control-Allow-Origin:*");
+header("Access-Control-Allow-Origin: * ");
+header("Access-Control-Allow-Headers:  * ");
 @session_start();
 require 'autoload.php';
 
@@ -21,13 +22,9 @@ $params = $_GET;
 
 switch($params["action"])
 {
-    case "getallexercicesarm" :
-        Getallexercicesarm :: run()
-    ;
-    break;
-
-    case "getexercicearm" :
-        Getexercicearm :: run ($params["exercices_biceps_id"])
+   
+    case "getexercice" :
+        GetExercice :: run ($params["exercice_id"])
         ;
     break;
 
@@ -44,5 +41,26 @@ switch($params["action"])
     case "logout" :
         Logout :: run()
             ;
-    break;    
+    break;
+
+    case "getroutine" :
+        GetRoutine :: run($params['user'],$params['day'],$params['week'])
+            ;
+    break;
+    
+    case "getperformance" :
+        GetPerformance :: run($params['user'],$params['date'],$params['exercice'])
+            ;
+    break;
+    
+    case "getmyexercice" :
+         GetMyExerice :: run($params['user'],$params['exercice_id'])
+            ;
+    break;
+
+    case "addperformance" :
+
+        AddPerformance :: run ($params['user'],$params['exercice_id'],$params['lift'],$params['reps'],$params['series'])
+        ;
+    break;
 }
