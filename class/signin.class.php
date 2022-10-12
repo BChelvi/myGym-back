@@ -9,7 +9,7 @@ class Signin{
         
         $pwd = password_hash($params["pwd"],PASSWORD_DEFAULT );
 
-        $db->create('user',  array('mail','pwd'), array( $mail, $pwd));
+        $db->create('user',  array('mail','pwd','program_id','actual_day','actual_week'), array( $mail, $pwd,1,1,1));
 
         // Connexion directe après inscription
         $_SESSION["mail"]= $mail;
