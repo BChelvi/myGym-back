@@ -63,4 +63,10 @@ switch($params["action"])
         AddPerformance :: run ($params['user'],$params['exercice_id'],$params['lift'],$params['reps'],$params['series'])
         ;
     break;
+
+    case "updateuser" :
+
+        UpdateUser :: run ($params['user'],$params['day'],$params['week'])
+        ;
+    break;
 }

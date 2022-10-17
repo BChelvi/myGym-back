@@ -1,1 +1,1 @@
-{"user":1,"day":1,"week":1,"action":"getroutine"}
+{"user":1,"exercice_id":"3","action":"getmyexercice"}
