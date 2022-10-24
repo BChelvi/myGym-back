@@ -60,13 +60,19 @@ switch($params["action"])
 
     case "addperformance" :
 
-        AddPerformance :: run ($params['user'],$params['exercice_id'],$params['lift'],$params['reps'],$params['series'])
+        AddPerformance :: run ($params['user'],$params['exercice_id'],$params['lift'],$params['reps'])
         ;
     break;
 
     case "updateuser" :
 
         UpdateUser :: run ($params['user'],$params['day'],$params['week'])
+        ;
+    break;
+
+    case "resetroutine" :
+
+        ResetRoutine :: run ()
         ;
     break;
 }

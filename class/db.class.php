@@ -180,21 +180,24 @@ public function update($table,$fields=array(),$values=array(),$id, $field_id){
         array_push($update,$field."="."'".$values[$i]."'");
     }
 
-try{
+    try{
 
-$sql = "UPDATE $table SET ".implode(",",$update)." WHERE $field_id = '$id'";  
-echo $sql;
-$sth = $this->dbco->prepare($sql);
+    $sql = "UPDATE $table SET ".implode(",",$update)." WHERE $field_id = '$id'";  
+    echo $sql;
+    $sth = $this->dbco->prepare($sql);
 
 
-$sth -> execute();
+    $sth -> execute();
 
+    }
+    catch(PDOException $e){
+            echo "Erreur : " . $e->getMessage();
+    }
+    }
+
+public function lastInsertId(){
+    return $this->dbco->lastInsertId();
 }
-catch(PDOException $e){
-        echo "Erreur : " . $e->getMessage();
-}
-}
-
 
 }
 ?>
